@@ -1,21 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <style>
-    body {
-        background-color:lightblue;
-        }
-        h1{
-            color:purple;
-            text-align:center;
-            }
-        </style>
-<title>My First Webpage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Algebra 2 Essential Formulas</title>
+
+<style>
+body {
+  background-color: #1a1a2e;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  text-align: center;
+}
+
+h1 {
+  color: #00d2ff;
+  text-shadow: 2px 2px #000;
+}
+
+.formula-card {
+  background: #16213e;
+  border: 2px solid #0f3460;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.formula-card:hover {
+  transform: scale(1.05);
+  border-color: #e94560;
+}
+
+.formula {
+  font-size: 1.5rem;
+  background: #0f3460;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  color: #00d2ff;
+}
+
+button {
+  background: #e94560;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.glow {
+  box-shadow: 0 0 20px #00d2ff;
+}
+</style>
 </head>
+
 <body>
 
-<h1>Weclome to my Webpage
-<p>This is my very first page.</p>
+<div class="container">
+  <h1>Algebra 2: Essential Formulas</h1>
+  <p>Student: Emily Sowa</p>
+  
+  <div class="formula-card">
+    <h2>The Quadratic Formula</h2>
+    <p>Finds x-intercepts for ax² + bx + c = 0</p>
+    <div class="formula">x = [-b ± √(b² - 4ac)] / 2a</div>
+  </div>
+
+  <div class="formula-card">
+    <h2>Vertex Form of a Quadratic</h2>
+    <p>Where (h, k) is the vertex</p>
+    <div class="formula">f(x) = a(x - h)² + k</div>
+  </div>
+
+  <div class="formula-card">
+    <h2>The Discriminant</h2>
+    <p>Tells you how many real solutions exist</p>
+    <div class="formula">D = b² - 4ac</div>
+  </div>
+
+  <div class="formula-card">
+    <h2>Exponential Growth/Decay</h2>
+    <p>For interest or population</p>
+    <div class="formula">A = P(1 ± r)^t</div>
+  </div>
+
+  <div class="formula-card">
+    <h2>Log Change of Base</h2>
+    <p>Useful for calculators</p>
+    <div class="formula">log_b(a) = log(a) / log(b)</div>
+  </div>
+
+  <button id="studyMode">Toggle Study Glow</button>
+</div>
+
+<script>
+const button = document.getElementById('studyMode');
+const cards = document.querySelectorAll('.formula-card');
+
+button.addEventListener('click', () => {
+  cards.forEach(card => {
+    card.classList.toggle('glow');
+  });
+
+  if (button.innerHTML === "Toggle Study Glow") {
+    button.innerHTML = "Glow On!";
+  } else {
+    button.innerHTML = "Toggle Study Glow";
+  }
+});
+</script>
 
 </body>
 </html>
